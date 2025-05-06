@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "f008306d-d2e3-4d92-90a5-36822bbbdf59",
+		"name": "CUSTOMER TOOL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28057939",
+		"_collection_link": "https://restless-sunset-329138.postman.co/workspace/pruebas-local~8ead1cb9-17f5-407b-bf54-b26a3f82b289/collection/28057939-f008306d-d2e3-4d92-90a5-36822bbbdf59?action=share&source=collection_link&creator=28057939"
+	},
+	"item": [
+		{
+			"name": "API REST",
+			"item": [
+				{
+					"name": "BASIC CRUD",
+					"item": [
+						{
+							"name": "CREATE",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"1\",\r\n  \"firstName\": \"Manuel\",\r\n  \"lastName\": \"Romero\",\r\n  \"username\": \"manuelRomero\",\r\n  \"password\": \"password\",\r\n  \"email\": \"manuelRomero@domain.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/customers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "READ",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/customers/123",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers",
+										"123"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "READ ALL",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/customers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"1\",\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Romero\",\r\n  \"username\": \"manuelRomero\",\r\n  \"password\": \"password\",\r\n  \"email\": \"manuelRomero@domain.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/customers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/customers/123",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers",
+										"123"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Create, Read, Update, Delete basic operations"
+				},
+				{
+					"name": "CUSTOM",
+					"item": [
+						{
+							"name": "SORT CREDIT",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/customers",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE availableCredit",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"1\",\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Romero\",\r\n  \"username\": \"manuelRomero\",\r\n  \"password\": \"password\",\r\n  \"email\": \"manuelRomero@domain.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/customers/1?avalableCredit=100",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"customers",
+										"1"
+									],
+									"query": [
+										{
+											"key": "avalableCredit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Custom methods (outside CRUD basic operations)"
+				}
+			]
+		}
+	]
+}

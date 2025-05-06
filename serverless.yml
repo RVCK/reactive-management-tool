@@ -1,0 +1,23 @@
+service: app-management-tool
+
+provider:
+  name: aws
+  runtime: java17
+  stage: dev
+  region: us-east-1
+
+functions:
+  appManagementTool:
+    handler: com.taxdown.managementtool.infraestructure.adapter.out.handler.AppManagementToolHandler::handleRequest
+    events:
+      - http:
+          path: app-management
+          method: get
+          cors: true
+
+package:
+  artifact: target/app-management-tool-*.jar
+
+resources:
+  Resources:
+  # AWS available resources
